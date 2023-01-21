@@ -1,0 +1,147 @@
+body {
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+   
+  }
+  
+  .ball {
+      border-radius: 50%;
+      width: 185px;
+      height: 175px;
+      text-align: center;
+  }
+  
+    .container {
+      height: 95%;
+      left: 28%;
+      position: absolute;
+    }
+  
+    .counters{
+      right: 30%;
+      bottom: 40%;
+      position: absolute;
+      border-style: solid;
+      border-width: thick;
+      border-radius: 10px;
+      padding: 20px;
+    }
+  
+    button {
+      font-size: 12px;
+      border-radius: 7px;
+      background-color: black;
+      color: white;
+      border: 2px solid #555555;
+      padding: 10px;
+      transition: 0.4s;
+      float: right;
+      cursor: pointer;
+      box-shadow: 0 7px #999;
+    }
+  
+    button:hover {
+      background-color: #555555;
+      color: white;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+  
+    .button:active {
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+    #redBall, #blueBall {
+      margin-bottom: 20px;
+    }
+  
+    .ball-shadow {
+      background: radial-gradient(50% 50%, #000 0%, #fff 100%);
+      height: 50px;
+      width: 175px;
+    }
+  
+    /* Looping animation is infinite */
+    .container .ball-shadow {
+      -webkit-animation-direction: alternate;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-name: grow;
+      -webkit-animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-duration: 1s;
+      animation-name: grow;
+      animation-iteration-count: infinite;
+      bottom: 0;
+      position: absolute;
+      margin-left: -100px;
+    }
+    
+    .container .ball {
+      -webkit-animation-direction: alternate;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-name: bounce;
+      -webkit-animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-duration: 1s;
+      animation-name: bounce;
+      animation-iteration-count: infinite;
+      margin-left: -100px;
+      position: absolute;
+    }
+    
+    /* Showing spread of shadow */
+    @-webkit-keyframes grow {
+      from {
+        bottom: 50;
+        margin-left: -100px;
+        height: 50px;
+        opacity: 1;
+        width: 200px;
+      }
+    
+      to {
+        bottom: 10px;
+        margin-left: -150px;
+        height: 80px;
+        opacity: 0.4;
+        width: 300px;
+      }
+    }
+    
+    @keyframes grow {
+      from {
+        bottom: 0;
+        margin-left: -100px;
+        height: 50px;
+        width: 200px;
+      }
+    
+      to {
+        bottom: 20px;
+        margin-left: 0;
+        height: 10px;
+        width: 15px;
+      }
+    }
+  
+    /* Showing height of bounce */  
+    @-webkit-keyframes bounce {
+      from {
+        bottom: 20px;
+      }
+    
+      to {
+        bottom: 77%;
+      }
+    }
+    
+    @keyframes bounce {
+      from {
+        bottom: 50px;
+      }
+    
+      to {
+        bottom: 77%;
+      }
+    }
+    
